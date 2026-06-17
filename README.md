@@ -5,7 +5,7 @@ nörofizyolojik (fNIRS) düzeyde değerlendirmek için geliştirilmiş, tarayıc
 tabanlı bir Go/No-Go görevi. Miao ve ark. (2017), Monden ve ark. (2012, 2015)
 çalışmaları temel alınmıştır.
 
-> **Geliştiren / Sorumlu Araştırmacı:** **Doç. Dr. Mert Doğan**
+> **Geliştiren Araştırmacı:** **Doç. Dr. Mert Doğan**
 
 **Teknoloji:** Saf HTML/CSS/JavaScript — kurulum gerektirmez. **Mac ve
 Windows'ta** herhangi bir modern tarayıcıda (Chrome/Edge önerilir) aynı şekilde
