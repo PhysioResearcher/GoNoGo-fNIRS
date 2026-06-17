@@ -1,0 +1,27 @@
+# Katılımcı veri çıktıları (depoya girmemeli)
+GoNoGo_*_trials.csv
+GoNoGo_*_summary.csv
+GoNoGo_*_events.tsv
+GoNoGo_*_markers.csv
+GoNoGo_*_session.json
+data/
+*.csv.bak
+
+# Arşivler
+*.zip
+
+# Yerel araç/ayar dosyaları
+.claude/
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Editör
+.vscode/
+.idea/
+*.swp

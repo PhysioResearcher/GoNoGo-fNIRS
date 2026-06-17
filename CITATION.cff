@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Bu yazılımı kullanırsanız lütfen aşağıdaki gibi atıfta bulunun."
+title: "Go/No-Go Görevi (fNIRS senkronizasyonlu)"
+abstract: >-
+  İnhibisyon kontrolü ve dikkat süreçlerini davranışsal ve fNIRS düzeyinde
+  değerlendirmek için tarayıcı tabanlı Go/No-Go görevi. Miao ve ark. (2017) ile
+  Monden ve ark. (2012, 2015) paradigmaları temel alınmıştır.
+type: software
+authors:
+  - family-names: "Doğan"
+    given-names: "Mert"
+    name-prefix: "Doç. Dr."
+keywords:
+  - go/no-go
+  - inhibisyon kontrolü
+  - fNIRS
+  - prefrontal korteks
+  - tepki süresi
+license: MIT
+version: "1.0.0"
+date-released: "2026-06-17"

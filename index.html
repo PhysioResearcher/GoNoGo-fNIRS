@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Go / No-Go Görevi (fNIRS)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ===== Kurulum ===== -->
+    <section id="setup" class="screen">
+      <div class="card">
+        <h1>Go / No-Go Görevi</h1>
+        <p class="sub">fNIRS senkronizasyonlu inhibisyon kontrolü görevi</p>
+
+        <div class="form-row">
+          <label>Katılımcı No *<input id="pid" autocomplete="off" placeholder="ör. P001"></label>
+          <label>Oturum<input id="sid" autocomplete="off" placeholder="1" value="1"></label>
+        </div>
+        <div class="form-row">
+          <label>Grup<input id="grp" autocomplete="off" placeholder="ör. Kontrol"></label>
+          <label>Yaş<input id="age" autocomplete="off" placeholder="ör. 8"></label>
+        </div>
+        <div class="form-row">
+          <label>Go/No-Go hedef (Go) oranı %
+            <input id="ratio" type="number" min="10" max="90" step="1" value="75" inputmode="numeric">
+            <span id="ratioHint" class="ratio-hint"></span>
+          </label>
+          <label>Yanıt tuşu
+            <input id="respKey" value="Boşluk" readonly title="Sağ el işaret parmağı — BOŞLUK tuşu">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Notlar<textarea id="notes" rows="2" placeholder="opsiyonel"></textarea></label>
+        </div>
+
+        <div class="check-row">
+          <label><input type="checkbox" id="practiceChk" checked> Alıştırma oturumu</label>
+          <label><input type="checkbox" id="serial"> Seri TTL tetikleyici (fNIRS)</label>
+        </div>
+
+        <p id="cfgInfo"></p>
+        <button id="startBtn">Görevi Başlat</button>
+      </div>
+    </section>
+
+    <!-- ===== Yönerge ===== -->
+    <section id="instruction" class="screen hidden"></section>
+
+    <!-- ===== Sahne (uyaran) ===== -->
+    <section id="stage" class="screen hidden">
+      <div id="fixation" class="hidden">+</div>
+      <div id="stimulus" class="hidden"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <div id="restMsg" class="rest-msg hidden">Kısa mola — biraz dinlen 🌿</div>
+    </section>
+
+    <!-- ===== Bitiş ===== -->
+    <section id="end" class="screen hidden">
+      <div class="card">
+        <div id="summary"></div>
+        <div class="actions">
+          <button id="exportBtn">Verileri Kaydet (CSV/TSV/JSON)</button>
+          <button id="restartBtn" class="ghost">Yeni Katılımcı</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Görev sırasında kontrol çubuğu (Duraklat / Bitir) -->
+    <div id="controls" class="hidden">
+      <button id="pauseBtn" class="ctrl">⏸ Duraklat</button>
+      <button id="finishBtn" class="ctrl danger">⏹ Bitir</button>
+    </div>
+
+    <!-- Duraklatma katmanı -->
+    <div id="pauseOverlay" class="hidden">
+      <div class="pause-box">⏸ Duraklatıldı<br><span>Devam Et ile sürdürün</span></div>
+    </div>
+
+    <!-- fNIRS fotodiyot senkron karesi -->
+    <div id="photodiode"></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/svgStimuli.js"></script>
+  <script src="js/triggers.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/task.js"></script>
+  <script>
+    // Uyaran boyutunu yapılandırmadan uygula
+    document.documentElement.style.setProperty('--stim-size', TASK_CONFIG.stimulusSizePx + 'px');
+  </script>
+</body>
+</html>
