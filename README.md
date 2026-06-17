@@ -3,7 +3,7 @@
 İnhibisyon kontrolü ve dikkat süreçlerini hem davranışsal hem de
 nörofizyolojik (fNIRS) düzeyde değerlendirmek için geliştirilmiş, tarayıcı
 tabanlı bir Go/No-Go görevi. Miao ve ark. (2017), Monden ve ark. (2012, 2015)
-paradigmaları temel alınmıştır.
+çalışmaları temel alınmıştır.
 
 > **Geliştiren / Sorumlu Araştırmacı:** **Doç. Dr. Mert Doğan**
 
